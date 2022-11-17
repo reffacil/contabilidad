@@ -1,0 +1,92 @@
+<template id="calendar-template">
+    <link rel="stylesheet" href="css/styles.css">
+    <h2 class="calendarHeader">
+        <i name="btnLastMonth" id="btnLastMonth" class="icon reff-angle-left"></i>
+        <label id="showedDate" for="date"></label>
+        <input id="datePicker" type="date">
+        <i id="btnNextMonth" class="icon reff-angle-right"></i>
+    </h2>
+    <div class="monthDaysSlide"></div>
+    <ul class="monthDaysContainer"></ul>
+    <style>
+        *{box-sizing: border-box;}
+        :host{
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            position: relative;
+            border-radius: 2px;
+            width: fit-content;
+            height: fit-content;
+            padding-right: 1px;
+            background-color: white;
+        }
+
+        i{
+            cursor: pointer;
+        }
+
+        #datePicker{
+            visibility: hidden;
+            position: absolute;
+        }
+
+        .calendarHeader{
+            margin: 0;
+            height: 2em;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: solid 1px #eee;
+        }
+
+        .monthDaysSlide{
+            display: flex;
+            height: auto;
+            width: fit-content;
+            overflow: hidden;
+        }
+
+        .monthDaysContainer{
+            display: grid;
+            list-style: none;
+            grid-template-columns: repeat(7, 1fr);
+            width: fit-content;
+            padding: 0;
+            margin: 0;
+        }
+        .monthDaysContainer li:nth-child(-n+7){
+            text-align: center;
+            font-size: 1.2em;
+            padding: 5px 0px;
+            text-transform: capitalize;
+        }
+        .monthDaysContainer li:nth-child(n+8){
+            width: auto;
+            height: 100px;
+            cursor: pointer;
+            margin-left: 1px;
+            margin-bottom: 1px;
+            border-left: solid 1px #ccc;
+            border-top: solid 1px #ccc;
+        }
+
+        #showedDate{
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .firstDay{
+            grid-column-start: 5;
+        }
+
+        .currentDate{
+            background-color: #ccc;
+        }
+
+        .selectedDay{
+            background-color: coral;
+        }
+    </style>
+</template>
