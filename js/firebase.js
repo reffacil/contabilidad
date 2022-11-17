@@ -83,9 +83,3 @@ const auth = getAuth();
 //         console.error("Mensaje de error:", error);
 //     });
 // });
-
-document.addEventListener('DOMContentLoaded',function(){
-    // console.log("me cargue despues del el dom");
-    let prueba = document.getElementById("prueba");
-    prueba.value = env.FIREBASE_APIKEY;
-});
