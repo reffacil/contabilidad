@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "reffacil";
+  src:url("fonts/reffacil.eot");
+  src:url("fonts/reffacil.eot?#iefix") format("embedded-opentype"),
+    url("fonts/reffacil.woff") format("woff"),
+    url("fonts/reffacil.ttf") format("truetype"),
+    url("fonts/reffacil.svg#reffacil") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "reffacil" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="reff-"]:before,
+[class*=" reff-"]:before {
+  font-family: "reffacil" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.reff-search:before {
+  content: "\61";
+}
+.reff-menu:before {
+  content: "\63";
+}
+.reff-user:before {
+  content: "\74";
+}
+.reff-mail:before {
+  content: "\75";
+}
+.reff-login:before {
+  content: "\6c";
+}
+.reff-cart:before {
+  content: "\62";
+}
+.reff-logout:before {
+  content: "\64";
+}
+.reff-pass:before {
+  content: "\65";
+}
+.reff-css:before {
+  content: "\66";
+}
+.reff-html:before {
+  content: "\67";
+}
+.reff-js:before {
+  content: "\69";
+}
+.reff-home:before {
+  content: "\68";
+}
+.reff-angle-down:before {
+  content: "\6a";
+}
+.reff-angle-left:before {
+  content: "\6b";
+}
+.reff-angle-right:before {
+  content: "\6d";
+}
+.reff-angle-up:before {
+  content: "\6e";
+}
+.reff-comments-o:before {
+  content: "\6f";
+}
+.reff-code-html-file-1:before {
+  content: "\70";
+}
+.reff-caret-down:before {
+  content: "\71";
+}
+.reff-caret-left:before {
+  content: "\72";
+}
+.reff-caret-right:before {
+  content: "\73";
+}
+.reff-caret-up:before {
+  content: "\76";
+}
+.reff-at-email:before {
+  content: "\77";
+}
+.reff-information:before {
+  content: "\78";
+}

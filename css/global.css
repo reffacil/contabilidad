@@ -1,0 +1,19 @@
+@import url("./styles.css");
+*{box-sizing: border-box;}
+
+body{
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Estilo para dispositivos pequeños como celulares y algunas tablets */
+@media only screen and (max-width: 768px){}
+
+/* Dispositivos de resolución media como tablets y algunas laptops*/
+@media only screen and (min-width: 768px) and (max-width: 1200px){}
+
+/* Dispositivos de alta resolución como laptops, pantallas o PC's de escritorios*/
+@media only screen and (min-width: 1200px) {}
