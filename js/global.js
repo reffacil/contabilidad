@@ -1,7 +1,7 @@
 class Xhr{
     constructor(path){
         this.xhr = new XMLHttpRequest();
-        this.xhr.open("GET", path, false);
+        this.xhr.open("GET", path, true);
         this.xhr.send();
     }
     // Return the main content HTML response
