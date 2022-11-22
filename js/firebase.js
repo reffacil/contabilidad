@@ -15,21 +15,22 @@ import {
 // Your web app's Firebase configuration
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-var env = new DotEnv("./.env");
-const firebaseConfig = {
-    apiKey:env.FIREBASE_APIKEY,
-    authDomain:env.FIREBASE_AUTHDOMAIN,
-    projectId:env.FIREBASE_PROJECTID,
-    storageBucket:env.FIREBASE_STORAGEBUCKET,
-    messagingSenderId:env.FIREBASE_MESSAGINGSENDERID,
-    appId:env.FIREBASE_APPID,
-    measurementId:env.FIREBASE_MEASUREMENTID
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const auth = getAuth();
+new DotEnv("./.env")
+    .then(env => { const firebaseConfig = {
+        apiKey:env.FIREBASE_APIKEY,
+        authDomain:env.FIREBASE_AUTHDOMAIN,
+        projectId:env.FIREBASE_PROJECTID,
+        storageBucket:env.FIREBASE_STORAGEBUCKET,
+        messagingSenderId:env.FIREBASE_MESSAGINGSENDERID,
+        appId:env.FIREBASE_APPID,
+        measurementId:env.FIREBASE_MEASUREMENTID
+    };
+    
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+});
 
 // let formularioDeRegistro = document.getElementById("formularioDeRegistro");
 // formularioDeRegistro.addEventListener("submit", function(event){

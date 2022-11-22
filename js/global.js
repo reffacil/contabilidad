@@ -1,24 +1,30 @@
 class Xhr{
     constructor(path){
-        this.xhr = new XMLHttpRequest();
-        this.xhr.open("GET", path, false);
-        this.xhr.send();
+        return new Promise((resolve, reject) => {
+            try{
+                this.xhr = new XMLHttpRequest();
+                this.xhr.onreadystatechange = function(){if(this.readyState === 4 && this.status === 200){resolve(this.response);}}
+                this.xhr.open("GET", path, true);
+                this.xhr.send();
+            }catch(error){
+                reject(error);
+            }
+        });
     }
-    // Return the main content HTML response
-    get response(){return this.xhr.response;}
 }
 
 class DotEnv{
     constructor(path){
-        const env = new Xhr(path).response;
-        let element = env.split(/\r?\n/);
-        let arrayVar = new Array();
-        element.forEach(row => {
-            let str = row.split(/=/);
-            if(str[0]){
-                arrayVar[str[0].trim()] = str[1].trim();
-            }
+        return new Xhr(path).then(response => {
+            let split = response.split(/\r?\n/);
+            let env = new Array();
+            split.forEach(row => {
+                let str = row.split(/=/);
+                if(str[0]){
+                    env[str[0].trim()] = str[1].trim();
+                }
+            });
+            return env;
         });
-        return arrayVar;
     }
 }
